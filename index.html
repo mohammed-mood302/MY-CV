@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohammed Sir - Portfolio & CV</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: { 50: '#f0f9ff', 100: '#e0f2fe', 500: '#0ea5e9', 600: '#0284c7', 700: '#0369a1' },
+                        accent: { 500: '#6366f1', 600: '#4f46e5' }
+                    },
+                    fontFamily: {
+                        cairo: ['Cairo', 'sans-serif'],
+                        inter: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Cairo', 'Inter', sans-serif; }
+        .certificate-card { transition: all 0.3s ease; }
+        .certificate-card:hover { transform: translateY(-5px); }
+        @media print {
+            .no-print { display: none !important; }
+            body { background: white !important; color: black !important; }
+            .print-break-inside { page-break-inside: avoid; }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 min-h-screen transition-colors duration-300">
+
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-40 backdrop-blur-md bg-white/80 dark:bg-slate-900/80 border-b border-slate-200 dark:border-slate-800 no-print">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-sky-500 to-indigo-600">
+                Mohammed Sir
+            </a>
+            <div class="flex items-center space-x-3 space-x-reverse">
+                <button onclick="toggleLanguage()" class="px-3 py-1.5 text-xs font-semibold rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition">
+                    <i class="fa-solid fa-globe mr-1"></i> <span id="lang-btn-text">English</span>
+                </button>
+                <button onclick="toggleDarkMode()" class="p-2 text-slate-600 dark:text-slate-300 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">
+                    <i class="fa-solid fa-moon dark:hidden"></i>
+                    <i class="fa-solid fa-sun hidden dark:inline"></i>
+                </button>
+                <button onclick="window.print()" class="px-3 py-1.5 text-xs font-semibold text-white rounded-lg bg-sky-600 hover:bg-sky-700 transition">
+                    <i class="fa-solid fa-print mr-1"></i> <span data-ar="طباعة CV" data-en="Print CV">طباعة CV</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="max-w-6xl mx-auto px-4 py-12">
+        <div class="flex flex-col md:flex-row items-center gap-8 bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700">
+            <div class="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden bg-gradient-to-br from-sky-400 to-indigo-600 p-1 flex-shrink-0">
+                <div class="w-full h-full bg-slate-100 dark:bg-slate-700 rounded-full flex items-center justify-center text-4xl text-sky-600 dark:text-sky-400 font-bold">
+                    MS
+                </div>
+            </div>
+            <div class="text-center md:text-right space-y-3 flex-grow">
+                <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white">Mohammed Sir</h1>
+                <p class="text-sky-600 dark:text-sky-400 font-medium text-lg" data-ar="طالب نظم معلومات وعلوم حاسب | مبرمج أنظمة و أجهزة ذكية" data-en="Information Systems & CS Student | Hardware & Embedded Systems Developer">
+                    طالب نظم معلومات وعلوم حاسب | مبرمج أنظمة و أجهزة ذكية
+                </p>
+                <p class="text-slate-600 dark:text-slate-300 text-sm max-w-2xl leading-relaxed" data-ar="طالب بالأكاديمية العربية للعلوم والتكنولوجيا والنقل البحري. متكافئ في برمجة اللغات الأساسية مثل C و Java، شغوف بتطوير مشاريع إنترنت الأشياء والتحكم في الطائرات بدون طيار والسيارات الذكية بمتحكمات ESP32 و Arduino." data-en="Student at Arab Academy for Science, Technology & Maritime Transport (AAST). Skilled in C & Java programming, passionate about IoT development, quadcopter drones, and smart RC cars using ESP32 and Arduino microcontrollers.">
+                    طالب بالأكاديمية العربية للعلوم والتكنولوجيا والنقل البحري. متكافئ في برمجة اللغات الأساسية مثل C و Java، شغوف بتطوير مشاريع إنترنت الأشياء والتحكم في الطائرات بدون طيار والسيارات الذكية بمتحكمات ESP32 و Arduino.
+                </p>
+                <!-- Contacts Grid -->
+                <div class="pt-2 flex flex-wrap gap-4 justify-center md:justify-start text-xs text-slate-600 dark:text-slate-400">
+                    <a href="mailto:mohammedsirelkhatim111@gmail.com" class="flex items-center gap-1.5 hover:text-sky-500">
+                        <i class="fa-solid fa-envelope text-sky-500"></i> mohammedsirelkhatim111@gmail.com
+                    </a>
+                    <span class="flex items-center gap-1.5">
+                        <i class="fa-brands fa-whatsapp text-emerald-500"></i> MOOD@302
+                    </span>
+                    <span class="flex items-center gap-1.5">
+                        <i class="fa-solid fa-location-dot text-rose-500"></i> مصر - الجيزة
+                    </span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto px-4 pb-16 space-y-10">
+
+        <!-- Skills Section -->
+        <section class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 print-break-inside">
+            <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2 border-b pb-2 border-slate-100 dark:border-slate-700">
+                <i class="fa-solid fa-code text-sky-500"></i>
+                <span data-ar="المهارات البرمجية والتقنية" data-en="Programming & Technical Skills">المهارات البرمجية والتقنية</span>
+            </h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-700/50 border border-slate-100 dark:border-slate-700">
+                    <p class="font-bold text-slate-900 dark:text-white">C Language</p>
+                    <p class="text-xs text-slate-500 dark:text-slate-400" data-ar="متقدم - برمجة النظم والخوارزميات" data-en="Advanced - System & Algorithms">متقدم - برمجة النظم والخوارزميات</p>
+                </div>
+                <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-700/50 border border-slate-100 dark:border-slate-700">
+                    <p class="font-bold text-slate-900 dark:text-white">Java Language</p>
+                    <p class="text-xs text-slate-500 dark:text-slate-400" data-ar="جيد جداً - البرمجة الشيئية (OOP)" data-en="Very Good - OOP Principles">جيد جداً - البرمجة الشيئية (OOP)</p>
+                </div>
+                <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-700/50 border border-slate-100 dark:border-slate-700">
+                    <p class="font-bold text-slate-900 dark:text-white">ESP32 & Arduino</p>
+                    <p class="text-xs text-slate-500 dark:text-slate-400" data-ar="تطوير الأنظمة المدمجة و IoT" data-en="Embedded Systems & IoT">تطوير الأنظمة المدمجة و IoT</p>
+                </div>
+                <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-700/50 border border-slate-100 dark:border-slate-700">
+                    <p class="font-bold text-slate-900 dark:text-white">HTML / CSS / JS</p>
+                    <p class="text-xs text-slate-500 dark:text-slate-400" data-ar="تطوير الواجهات الإلكترونية" data-en="Web Interface Development">تطوير الواجهات الإلكترونية</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 print-break-inside">
+            <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2 border-b pb-2 border-slate-100 dark:border-slate-700">
+                <i class="fa-solid fa-certificate text-indigo-500"></i>
+                <span data-ar="الشهادات التدريبية أونلاين" data-en="Online Certificates">الشهادات التدريبية أونلاين</span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <!-- Cert 1 -->
+                <div class="certificate-card p-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-700/30">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-xs font-semibold px-2 py-0.5 rounded bg-sky-100 dark:bg-sky-900 text-sky-700 dark:text-sky-300">C Programming</span>
+                        <i class="fa-solid fa-award text-amber-500"></i>
+                    </div>
+                    <h3 class="font-bold text-sm text-slate-900 dark:text-white">C Programming Fundamentals</h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Issued Online Course - Verified Completion</p>
+                </div>
+                <!-- Cert 2 -->
+                <div class="certificate-card p-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-700/30">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-xs font-semibold px-2 py-0.5 rounded bg-indigo-100 dark:bg-indigo-900 text-indigo-700 dark:text-indigo-300">Java</span>
+                        <i class="fa-solid fa-award text-amber-500"></i>
+                    </div>
+                    <h3 class="font-bold text-sm text-slate-900 dark:text-white">Object-Oriented Programming in Java</h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Issued Online Course - Verified Completion</p>
+                </div>
+                <!-- Cert 3 -->
+                <div class="certificate-card p-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-700/30">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-xs font-semibold px-2 py-0.5 rounded bg-emerald-100 dark:bg-emerald-900 text-emerald-700 dark:text-emerald-300">IoT & Microcontrollers</span>
+                        <i class="fa-solid fa-award text-amber-500"></i>
+                    </div>
+                    <h3 class="font-bold text-sm text-slate-900 dark:text-white">Embedded Systems with ESP32</h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Issued Online Course - Verified Completion</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 print-break-inside">
+            <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2 border-b pb-2 border-slate-100 dark:border-slate-700">
+                <i class="fa-solid fa-microchip text-emerald-500"></i>
+                <span data-ar="مشاريع الأجهزة والإلكترونيات (ESP32 & Arduino)" data-en="Hardware & Robotics Projects">مشاريع الأجهزة والإلكترونيات (ESP32 & Arduino)</span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Drone Project -->
+                <div class="p-5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-700/30 space-y-2">
+                    <div class="flex justify-between items-center">
+                        <h3 class="font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                            <i class="fa-solid fa-helicopter text-sky-500"></i>
+                            <span data-ar="طائرة درون صغيرة (ESP32 Drone)" data-en="ESP32 Quadcopter Drone">طائرة درون صغيرة (ESP32 Drone)</span>
+                        </h3>
+                        <span class="text-xs bg-sky-100 text-sky-800 dark:bg-sky-900 dark:text-sky-200 px-2 py-0.5 rounded font-mono">ESP32 + Gyro</span>
+                    </div>
+                    <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed" data-ar="تصميم وتجميع طائرة درون رباعية المحركات مسيرة بمتحكم ESP32 وحساس الاتزان MPU6050، مع إمكانية التحكم بها لاسلكياً عن طريق الـ Wi-Fi." data-en="Custom quadcopter built using ESP32 micro-controller and MPU6050 gyro/accelerometer sensor with Wi-Fi wireless control interface.">
+                        تصميم وتجميع طائرة درون رباعية المحركات مسيرة بمتحكم ESP32 وحساس الاتزان MPU6050، مع إمكانية التحكم بها لاسلكياً عن طريق الـ Wi-Fi.
+                    </p>
+                </div>
+
+                <!-- RC Car Project -->
+                <div class="p-5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-700/30 space-y-2">
+                    <div class="flex justify-between items-center">
+                        <h3 class="font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                            <i class="fa-solid fa-car text-indigo-500"></i>
+                            <span data-ar="سيارة ذكية (Smart Bluetooth/Wi-Fi RC Car)" data-en="Smart RC Car">سيارة ذكية (Smart Bluetooth/Wi-Fi RC Car)</span>
+                        </h3>
+                        <span class="text-xs bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200 px-2 py-0.5 rounded font-mono">Arduino/ESP32</span>
+                    </div>
+                    <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed" data-ar="بناء سيارة إلكترونية ذكية مزودة بمحركات دفع وحساسات موجات فوق صوتية (Ultrasonic) لتفادي العوائق تلقائياً، مع إمكانية القيادة اليدوية عبر تطبيق الهاتف." data-en="Smart robotic car built with ultrasonic sensors for obstacle avoidance and Bluetooth/Wi-Fi manual control mode using mobile application.">
+                        بناء سيارة إلكترونية ذكية مزودة بمحركات دفع وحساسات موجات فوق صوتية (Ultrasonic) لتفادي العوائق تلقائياً، مع إمكانية القيادة اليدوية عبر تطبيق الهاتف.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- University & Sports Section -->
+        <section class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 print-break-inside">
+            <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2 border-b pb-2 border-slate-100 dark:border-slate-700">
+                <i class="fa-solid fa-volleyball text-rose-500"></i>
+                <span data-ar="الأنشطة الرياضية والاهتمامات الجامعية" data-en="Campus Life & Sports Activities">الأنشطة الرياضية والاهتمامات الجامعية</span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-700/40 border border-slate-100 dark:border-slate-700 text-center">
+                    <i class="fa-solid fa-volleyball text-2xl text-amber-500 mb-2"></i>
+                    <h3 class="font-bold text-slate-900 dark:text-white text-sm" data-ar="كرة الطائرة" data-en="Volleyball">كرة الطائرة</h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-1" data-ar="مشاركة بالأنشطة الرياضية الجامعية" data-en="Active player in university matches">مشاركة بالأنشطة الرياضية الجامعية</p>
+                </div>
+                <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-700/40 border border-slate-100 dark:border-slate-700 text-center">
+                    <i class="fa-solid fa-chess text-2xl text-indigo-500 mb-2"></i>
+                    <h3 class="font-bold text-slate-900 dark:text-white text-sm" data-ar="الشطرنج" data-en="Chess">الشطرنج</h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-1" data-ar="تفكير استراتيجي وحل المشكلات" data-en="Strategic thinking & problem solving">تفكير استراتيجي وحل المشكلات</p>
+                </div>
+                <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-700/40 border border-slate-100 dark:border-slate-700 text-center">
+                    <i class="fa-solid fa-table-tennis-paddle-ball text-2xl text-emerald-500 mb-2"></i>
+                    <h3 class="font-bold text-slate-900 dark:text-white text-sm" data-ar="تنس الطاولة (بنق بونق)" data-en="Table Tennis">تنس الطاولة (بنق بونق)</h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-1" data-ar="رياضة ترفيهية وتنافسية" data-en="Competitive & recreational activity">رياضة ترفيهية وتنافسية</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 print-break-inside">
+            <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2 border-b pb-2 border-slate-100 dark:border-slate-700">
+                <i class="fa-solid fa-graduation-cap text-sky-500"></i>
+                <span data-ar="التعليم الأكاديمي" data-en="Education">التعليم الأكاديمي</span>
+            </h2>
+            <div class="space-y-3">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 class="font-bold text-slate-900 dark:text-white" data-ar="الأكاديمية العربية للعلوم والتكنولوجيا والنقل البحري (AAST)" data-en="Arab Academy for Science, Technology & Maritime Transport">
+                            الأكاديمية العربية للعلوم والتكنولوجيا والنقل البحري (AAST)
+                        </h3>
+                        <p class="text-xs text-sky-600 dark:text-sky-400 font-medium" data-ar="بكالوريوس نظم معلومات وعلوم الحاسب" data-en="Bachelor of Information Systems & Computer Science">
+                            بكالوريوس نظم معلومات وعلوم الحاسب
+                        </p>
+                    </div>
+                    <span class="text-xs bg-slate-100 dark:bg-slate-700 px-2 py-1 rounded text-slate-600 dark:text-slate-300">قيد الدراسة</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Script -->
+    <script>
+        let currentLang = 'ar';
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'ar' ? 'en' : 'ar';
+            document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+            document.getElementById('lang-btn-text').innerText = currentLang === 'ar' ? 'English' : 'عربي';
+
+            document.querySelectorAll('[data-ar]').forEach(el => {
+                el.innerText = el.getAttribute(`data-${currentLang}`);
+            });
+        }
+
+        function toggleDarkMode() {
+            document.documentElement.classList.toggle('dark');
+        }
+    </script>
+</body>
+</html>
